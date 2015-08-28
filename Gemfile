@@ -14,6 +14,7 @@ gem 'uikit-sass-rails'
 
 group :development do
   gem 'pry'
+  gem 'html2slim'
 end
 group :test do
   gem 'minitest-rails-capybara'

@@ -81,6 +81,9 @@ GEM
     guard-minitest (2.4.4)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    hpricot (0.8.6)
+    html2slim (0.2.0)
+      hpricot
     i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
@@ -193,7 +196,7 @@ GEM
       railties (>= 3.1, < 5.0)
       slim (~> 3.0)
     slop (3.6.0)
-    sprockets (3.3.1)
+    sprockets (3.3.2)
       rack (~> 1.0)
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)
@@ -227,6 +230,7 @@ DEPENDENCIES
   fabrication
   guard
   guard-minitest
+  html2slim
   jbuilder (~> 2.3.1)
   jquery-rails (~> 4.0.4)
   minitest-rails-capybara
