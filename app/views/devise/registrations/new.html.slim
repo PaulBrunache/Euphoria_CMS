@@ -1,24 +1,30 @@
-h2
-  | Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-    br
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.ui.three.column.centered.grid
+  .column
+    h2.ui.teal.image.header
+      //#add logo later img.image src="assets/images/logo.png" /
+    .content.centered
+      h2 Sign Up
+    .row
+      = devise_error_messages!
+    .row
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class:["ui","form"]}) do |f|
+        .ui.stacked.segment
+          .field
+            .ui.left.icon.input
+              i.eye.icon
+              = f.text_field :username, autofocus: true,placeholder: "Display Name"
+          .field
+            .ui.left.icon.input
+              i.user.icon
+              = f.email_field :email, autofocus: true,placeholder: "E-mail address"
+          .field
+            .ui.left.icon.input
+              i.lock.icon
+              = f.password_field :password, autocomplete: "off", placeholder: "password"
+          .field
+            .ui.left.icon.input
+              i.check.icon
+              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "confirm password"
+          .field
+             = f.submit "Sign up", class:"ui fluid large green submit button"
+      

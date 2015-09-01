@@ -10,7 +10,8 @@ gem 'turbolinks', '~> 2.5.3'
 gem 'jbuilder', '~> 2.3.1'
 gem 'slim-rails'
 gem 'devise'
-gem 'uikit-sass-rails'
+#gem 'uikit-sass-rails'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 group :development do
   gem 'pry'
