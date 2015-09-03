@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820034125) do
+ActiveRecord::Schema.define(version: 20150903042804) do
+
+  create_table "permissions", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "create"
+    t.boolean  "manage"
+    t.boolean  "delete"
+    t.boolean  "manage_others"
+    t.boolean  "delete_others"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "permissions_roles", id: false, force: :cascade do |t|
+    t.integer "permission_id", null: false
+    t.integer "role_id",       null: false
+  end
+
+  add_index "permissions_roles", ["permission_id", "role_id"], name: "index_permissions_roles_on_permission_id_and_role_id"
+  add_index "permissions_roles", ["role_id", "permission_id"], name: "index_permissions_roles_on_role_id_and_permission_id"
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               default: "", null: false
