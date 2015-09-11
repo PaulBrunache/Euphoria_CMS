@@ -1,0 +1,27 @@
+= form_for @permission do |f|
+  - if @permission.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@permission.errors.count, "error")} prohibited this permission from being saved:"
+      ul
+        - @permission.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :create
+    = f.check_box :create
+  .field
+    = f.label :manage
+    = f.check_box :manage
+  .field
+    = f.label :delete
+    = f.check_box :delete
+  .field
+    = f.label :manage_all
+    = f.check_box :manage_all
+  .field
+    = f.label :delete_all
+    = f.check_box :delete_all
+  .actions = f.submit

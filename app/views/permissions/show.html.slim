@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @permission.name
+p
+  strong Create:
+  = @permission.create
+p
+  strong Manage:
+  = @permission.manage
+p
+  strong Delete:
+  = @permission.delete
+p
+  strong Manage all:
+  = @permission.manage_all
+p
+  strong Delete all:
+  = @permission.delete_all
+
+= link_to 'Edit', edit_permission_path(@permission)
+'|
+= link_to 'Back', permissions_path
