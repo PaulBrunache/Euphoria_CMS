@@ -16,6 +16,7 @@ gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 group :development do
   gem 'pry'
   gem 'html2slim'
+  gem "spring"
 end
 group :test do
   gem 'minitest-rails-capybara'

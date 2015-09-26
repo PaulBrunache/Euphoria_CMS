@@ -1,0 +1,24 @@
+= form_for @announcement do |f|
+  - if @announcement.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@announcement.errors.count, "error")} prohibited this announcement from being saved:"
+      ul
+        - @announcement.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :start_date
+    = f.datetime_select :start_date
+  .field
+    = f.label :end_date
+    = f.datetime_select :end_date
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions = f.submit

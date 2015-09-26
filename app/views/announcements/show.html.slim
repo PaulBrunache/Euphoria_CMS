@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @announcement.name
+p
+  strong Content:
+  = @announcement.content
+p
+  strong Start date:
+  = @announcement.start_date
+p
+  strong End date:
+  = @announcement.end_date
+p
+  strong User:
+  = @announcement.user
+
+= link_to 'Edit', edit_announcement_path(@announcement)
+'|
+= link_to 'Back', announcements_path

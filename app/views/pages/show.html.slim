@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @page.name
+p
+  strong Description:
+  = @page.description
+p
+  strong Keywords:
+  = @page.keywords
+p
+  strong Index:
+  = @page.index
+p
+  strong Follow:
+  = @page.follow
+
+= link_to 'Edit', edit_page_path(@page)
+'|
+= link_to 'Back', pages_path
